@@ -7,11 +7,7 @@ client.on('ready', () => {
 client.on("message", (message) => {
   var content = message.content.split(" ");
   if (content[0] == '.stats') {
-    
-      
-     
-     request('https://mcapi.us/server/status?ip=14b14t.com', function (error, response, body) {
-    
+     request('https://mcapi.us/server/status?ip=14b14t.com', function (body) {
       let apiJSON = body;
       let result = JSON.parse(apiJSON);
       const playersresult = (result.players.now);
